@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width",initial-scale=1.0>
+        <title>Budget Tracker</title>
+
+
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="module">
+            import { alertController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
+            window.alertController = alertController;
+          </script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+
+
+
+    </head>
+    <body>
+        <ion-app>
+            <ion-tabs>
+
+            <ion-tab tab="home">    
+            <ion-header>
+                <ion-toolbar color="tertiary">
+                    <ion-title>Budget Tracker</ion-title>
+                </ion-toolbar>
+            </ion-header>
+
+            <ion-content fullscreen class="ion-padding">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Add New Workout Routine</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-item>
+                <ion-item>
+                <ion-label position="floating">Time Spent</ion-label>
+                <ion-input type="text" id="input-reason"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Number of Reps</ion-label>
+                    <ion-input type="text" id="input-amount"></ion-input>
+                    </ion-item>
+
+                    <br>
+                    <ion-item>
+                      <ion-label>Workout</ion-label>
+                      <ion-select interface="popover" id="input-category">
+                        <ion-select-option value="food-and-drinks-outline" class="food-and-drinks-outline">Sit-ups</ion-select-option>
+                        <ion-select-option value="groceries-outline" class="groceries-outline">Crunches</ion-select-option>
+                        <ion-select-option value="shopping-outline" class="shopping-outline">Burpies</ion-select-option>
+                        <ion-select-option value="transport-outline" class="transport-outline">Jumping Jacks</ion-select-option>
+                        <ion-select-option value="recreational-outline" class="recreational-outline">Push-Ups</ion-select-option>
+                        <ion-select-option value="bills-outline" class="bills-outline">Pull-Ups</ion-select-option>
+                        <ion-select-option value="other-outline" class="other-outline">Squats</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+
+                    <div class="ion-margin ion-margin-vertical ion-text-right">
+
+                    <ion-alert-controller></ion-alert-controller>
+                    <ion-button id="btn-confirm">
+                        Log
+                    </ion-button>
+                </div>
+
+                </ion-card-item>
+                </ion-card>
+                <ion-list class="checkList">
+                </ion-list>
+            </ion-content>
+            </ion-tab>
+
+            <ion-tab tab="user-log">
+                <ion-header translucent>
+                  <ion-toolbar>
+                    <ion-title>Home</ion-title>
+                  </ion-toolbar>
+                </ion-header>
+        
+              <ion-content fullscreen class="ion-padding">
+                <h1>Log</h1>
+                <ion-list class="checkList">
+                </ion-list>
+              </ion-content>
+            </ion-tab>
+
+              <ion-tab tab="profile">
+                <ion-header translucent>
+                  <ion-toolbar>
+                    <ion-title>User Log</ion-title>
+                  </ion-toolbar>
+                </ion-header>
+        
+                <ion-content fullscreen class="ion-padding">
+                  <h1>Profile</h1>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title>Madison Wu</ion-card-title>
+                      </ion-card-header>
+                      <ion-card-content>
+                        <ion-label position="stacked">Username</ion-label>
+                        <ion-input placeholder="Example: TommyD"></ion-input>
+                        <ion-label position="stacked">Password (Must contain at least one symbol and one number)</ion-label>
+                        <ion-input placeholder="Example: Password!1" type="password"></ion-input>
+                      </ion-card-content>
+                    </ion-card>
+                </ion-content>
+              </ion-tab>
+
+            <ion-footer class="ion-no-border">
+                
+              </ion-footer>
+
+              <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="home">
+                  <ion-label>Home</ion-label>
+                  <ion-icon name="home-outline"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="user-log">
+                  <ion-label>User Log</ion-label>
+                  <ion-icon name="reader-outline"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="profile">
+                  <ion-label>Profile</ion-label>
+                  <ion-icon name="person-outline"></ion-icon>
+                </ion-tab-button>
+              </ion-tab-bar>
+              
+          </ion-tabs>
+        </ion-app>
+        <script src="script.js"></script>
+    </body>
+</html>
